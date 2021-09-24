@@ -1,7 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import { Route, Switch } from 'react-router-dom';
+import logo from '../logo.svg';
+import SignupDashboard from './SignupDashboard';
+import Test from './Test';
 
 function App() {
+  return (
+    <Switch>
+      <Route component={SignupDashboard} path={'/signup'} />
+      <Route component={Test} path='/test' />
+      <Route component={MainPage} path='/' exact />
+      <Route render={() => ('no')} />
+    </Switch>
+  )
+}
+
+const MainPage = function () {
   return (
     <div className="App">
       <header className="App-header">

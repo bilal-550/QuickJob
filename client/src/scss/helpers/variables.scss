@@ -1,0 +1,57 @@
+/* Fonts */
+$primary-font: 'Arima Madurai';
+$seconday-font: 'Quicksand';
+
+/* Colors */
+$primary-color: #2660A4;
+$light-color: #f1f3fb;
+$dark-color: #0A100D;
+$danger-color: #DB222A;
+$warn-color: #FBCF23;
+$grey-color: #A9A9A9;
+
+$lighten: 10;
+$darken: 25;
+
+$colors: (
+  primary: (
+    base: $primary-color,
+    light: lighten($primary-color, $lighten),
+    dark: darken($primary-color, $darken),
+  ),
+  light: (
+    base: $light-color,
+    light: lighten($light-color, $lighten),
+    dark: darken($light-color, $darken),
+  ),
+  dark: (
+    base: $dark-color,
+    light: lighten($dark-color, $lighten),
+    dark: darken($dark-color, $darken),
+  ),
+  grey: (
+    base: $grey-color,
+    light: lighten($grey-color, $lighten),
+    dark: darken($grey-color, $darken),
+  ),
+  danger: (
+    base: $danger-color,
+    light: lighten($danger-color, $lighten),
+    dark: darken($danger-color, $darken),
+  ),
+  warn: (
+    base: $warn-color,
+    light: lighten($warn-color, $lighten),
+    dark: darken($warn-color, $darken),
+  )
+);
+
+
+/* Utility Related Variables */
+$widthValues: (25, 50, 75, 100);
+$breakpoints: (sm: 576px, md: 768px, lg: 992px, x: 1200px);
+$textAlignment: (center, left, right, justify);
+
+/* Components Realted Variables */
+
+/* ⬇ card ⬇ */

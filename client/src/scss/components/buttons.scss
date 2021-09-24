@@ -1,0 +1,26 @@
+.btn {
+  padding: .2em .8em;
+  border-radius: 8px;
+  cursor: pointer;
+
+  
+}
+
+@each $color, $map in $colors {
+  .btn-#{'' + $color} {
+    @include createButton(map-get($map, base), map-get($map, light));
+  }
+
+  .btn-light {
+    color: color(dark);
+    border-color: color(dark);
+
+    &:hover, &:focus:hover{
+      background-color: lighten(#000, 90%);
+    }
+    &:focus {
+      background-color: lighten(#000, 80%);
+    }
+  
+  }
+};

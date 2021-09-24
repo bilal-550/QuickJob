@@ -1,0 +1,32 @@
+@import './normalize.scss';
+
+body, #root {
+  margin: 0;
+  height: 100vh;
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+*, *::before, *::after {
+  font-family: 'Quicksand', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  &, & > * {
+    font-family: 'Arima Madurai', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+  color: #e63946;
+}
+
+img {
+  max-width: 100%;
+}
+input {
+  appearance: none;
+  border-radius: 0;
+}

@@ -1,0 +1,72 @@
+@each $value in $widthValues {
+  $percentage: math.div(math.percentage($value), 100);
+
+  .w-#{$value} {
+    width: $percentage !important; 
+  }
+
+  .h-#{$value} {
+    height: $percentage !important; 
+  }
+
+  @each $breakpoint, $width in $breakpoints {
+    .w-#{$breakpoint}-#{$value} {
+      @include mediaQuery($width){
+        width: $percentage !important;
+      }
+    }
+
+    .h-#{$breakpoint}-#{$value} {
+      @include mediaQuery($width){
+        height: $percentage !important;
+      }
+    }
+  }
+}
+
+@each $color, $map in $colors {
+  $value: map-get($map, base);
+  .bg-#{"" + $color} {
+    background-color: $value !important;
+  }
+  .text-#{"" + $color} {
+    color: $value !important;
+  }
+}
+
+.flex {
+  display: flex;
+
+  $justify-positions: (
+      start: flex-start,
+      end: flex-end,
+      center: center,
+      around: space-around,
+      between: space-between,
+      evenly: space-evenly
+  );
+    $align-positions: (
+      start: flex-start,
+      end: flex-end,
+      center: center,
+      stretch: stretch,
+      baseline: baseline
+  );
+
+  @mixin flex-property($name,$prop,$arr) {
+      @each $mod, $dir in $arr {
+          &-#{$name}-#{$mod} {
+              #{$prop}: #{$dir};
+          }
+      }
+  }
+
+  @include flex-property('align','align-items', $align-positions);
+  @include flex-property('justify','justify-content', $justify-positions);
+}
+
+@each $value in $textAlignment {
+  .text-#{$value} {
+    text-align: $value;
+  }
+}
